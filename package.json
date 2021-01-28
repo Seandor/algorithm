@@ -1,0 +1,33 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "standard && npm run mocha",
+    "mocha": "mocha --timeout 8000",
+    "coverage": "nyc --reporter=lcov --reporter=text-summary npm run mocha",
+    "fix": "standard --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seandor/algorithm.git"
+  },
+  "keywords": [
+    "algorithm"
+  ],
+  "author": "Ling, Siyuan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Seandor/algorithm/issues"
+  },
+  "homepage": "https://github.com/Seandor/algorithm#readme",
+  "devDependencies": {
+    "expect": "^26.6.2",
+    "mocha": "^8.2.1",
+    "standard": "^16.0.3"
+  },
+  "mocha": {
+    "spec": "**/*.test.js"
+  }
+}

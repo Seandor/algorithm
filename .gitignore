@@ -1,2 +1,9 @@
 *.exe
 .vscode
+
+test.js
+test.cpp
+node_modules
+
+coverage
+.nyc_output
