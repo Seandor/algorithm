@@ -56,7 +56,7 @@ class LinkedList {
 
   insertAfter (anchor, item) {
     if (!(anchor instanceof ListNode)) {
-      return
+      return -1
     }
 
     const newNode = item instanceof ListNode ? item : new ListNode(item)
@@ -66,7 +66,7 @@ class LinkedList {
 
   insertBefore (anchor, item) {
     if (!(anchor instanceof ListNode)) {
-      return
+      return -1
     }
 
     const newNode = item instanceof ListNode ? item : new ListNode(item)
@@ -81,7 +81,7 @@ class LinkedList {
 
   deleteByNode (node) {
     if (!(node instanceof ListNode) || this.head.next === null) {
-      return
+      return -1
     }
 
     let currentNode = this.head
@@ -91,34 +91,22 @@ class LinkedList {
 
     if (currentNode === null) {
       // 没找着
-      return
+      return -1
     }
 
     currentNode.next = currentNode.next.next
   }
 
-  printAll () {
+  *[Symbol.iterator]() {
     let currentNode = this.head.next
     while (currentNode !== null) {
-      console.log(`${currentNode.value}`)
+      yield currentNode
       currentNode = currentNode.next
     }
   }
 }
 
-// Test
-const LList = new LinkedList()
-const data = [1, 2]
-
-for (let i = 0; i < data.length; i++) {
-  // LList.insertToHead(data[i])
-  LList.insertTail(data[i])
+module.exports = {
+  LinkedList,
+  ListNode
 }
-
-LList.printAll()
-
-const firstNode = LList.findByIndex(0)
-
-LList.deleteByNode(firstNode)
-
-LList.printAll()

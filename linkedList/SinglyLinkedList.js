@@ -64,7 +64,7 @@ class LinkedList {
 
   insertAfter (anchor, item) {
     if (!(anchor instanceof ListNode)) {
-      return
+      return -1
     }
 
     const newNode = item instanceof ListNode ? item : new ListNode(item)
@@ -74,7 +74,7 @@ class LinkedList {
 
   insertBefore (anchor, item) {
     if (!(anchor instanceof ListNode)) {
-      return
+      return -1
     }
 
     if (anchor === this.head) {
@@ -94,7 +94,7 @@ class LinkedList {
 
   deleteByNode (node) {
     if (!(node instanceof ListNode) || this.head === null) {
-      return
+      return -1
     }
 
     if (node === this.head) {
@@ -109,103 +109,23 @@ class LinkedList {
 
     if (currentNode === null) {
       // 没找着
-      return
+      return -1
     }
 
     currentNode.next = currentNode.next.next
   }
 
-  // 链表反转
-  inverse () {
-    // 空链表，或者只有一个节点，直接返回
-    if (this.head === null || this.head.next === null) {
-      return
-    }
-
-    let currentNode = null
-    let nextNode = this.head
-
-    // 这里最好自己画图，不然不好理解
-    while (nextNode !== null) {
-      const temp = nextNode.next
-      nextNode.next = currentNode
-      currentNode = nextNode
-      nextNode = temp
-    }
-
-    this.head = currentNode
-  }
-
-  checkCircle () {
-    let fast = this.head
-    let slow = this.head
-
-    while (fast !== null && fast.next !== null) {
-      fast = fast.next.next
-      slow = slow.next
-
-      if (slow === fast) {
-        fast = this.head
-        while (slow !== fast) {
-          slow = slow.next
-          fast = fast.next
-        }
-
-        return slow
-      }
-    }
-
-    return null
-  }
-
-  printAll () {
+  *[Symbol.iterator] () {
     let currentNode = this.head
     while (currentNode !== null) {
-      console.log(`${currentNode.value}`)
+      yield currentNode
       currentNode = currentNode.next
     }
   }
+
 }
-
-// Test
-const LList = new LinkedList()
-const data = [1, 2]
-
-for (let i = 0; i < data.length; i++) {
-  // LList.insertToHead(data[i])
-  LList.insertTail(data[i])
-}
-
-LList.printAll()
-
-const firstNode = LList.findByIndex(0)
-
-LList.deleteByNode(firstNode)
-
-// LList.printAll()
-
-// LList.inverse()
-
-// LList.printAll()
-
-/*
-Test circle
-*/
-// const data = [1, 2]
-
-// for (let i = 0; i < data.length; i++) {
-//   LList.insertTail(data[i])
-// }
-
-// const secondNode = LList.findByIndex(1)
-// const firstNode = LList.findByIndex(0)
-// secondNode.next = firstNode
-
-// const startNode = LList.checkCircle()
-// console.log(startNode.value)
-
-/** ************************************ */
 
 module.exports = {
-  LinkedList
+  LinkedList,
+  ListNode
 }
