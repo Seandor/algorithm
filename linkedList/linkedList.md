@@ -56,26 +56,18 @@ insertToHead (item) {
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function(head) {
-  // 空链表，或者只有一个节点，直接返回
-  if (head === null || head.next === null) {
-    return head
-  }
-
-  let currentNode = head
-  let nextNode = currentNode.next
-
-  currentNode.next = null
+const reverseList = function(head) {
+  let prev = null
+  let curr = head
   
-  // 这里最好自己画图，不然不好理解
-  while (nextNode !== null) {
-    let temp = nextNode.next
-    nextNode.next = currentNode
-    currentNode = nextNode
-    nextNode = temp
+  while (curr !== null) {
+    let temp = curr.next
+    curr.next = prev
+    prev = curr
+    curr = temp
   }
 
-  return currentNode
+  return prev
 };
 ```
 

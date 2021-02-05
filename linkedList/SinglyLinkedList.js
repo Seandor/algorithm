@@ -17,23 +17,23 @@ class LinkedList {
   }
 
   findByValue (item) {
-    let currentNode = this.head
-    while (currentNode !== null && currentNode.value !== item) {
-      currentNode = currentNode.next
+    let curr = this.head
+    while (curr !== null && curr.value !== item) {
+      curr = curr.next
     }
 
-    return currentNode === null ? -1 : currentNode
+    return curr === null ? -1 : curr
   }
 
   findByIndex (index) {
-    let currentNode = this.head
+    let curr = this.head
     let position = 0
-    while (currentNode !== null && position !== index) {
-      currentNode = currentNode.next
+    while (curr !== null && position !== index) {
+      curr = curr.next
       position++
     }
 
-    return currentNode === null ? -1 : currentNode
+    return curr === null ? -1 : curr
   }
 
   insertToHead (item) {
@@ -52,13 +52,13 @@ class LinkedList {
     if (this.head === null) {
       this.head = newNode
     } else {
-      let currentNode = this.head
-      while (currentNode.next !== null) {
-        currentNode = currentNode.next
+      let curr = this.head
+      while (curr.next !== null) {
+        curr = curr.next
       }
 
-      // newNode.next = currentNode.next
-      currentNode.next = newNode
+      // newNode.next = curr.next
+      curr.next = newNode
     }
   }
 
@@ -83,13 +83,13 @@ class LinkedList {
     }
 
     const newNode = item instanceof ListNode ? item : new ListNode(item)
-    let currentNode = this.head
-    while (currentNode !== null && currentNode.next !== anchor) {
-      currentNode = currentNode.next
+    let curr = this.head
+    while (curr !== null && curr.next !== anchor) {
+      curr = curr.next
     }
 
-    newNode.next = currentNode.next
-    currentNode.next = newNode
+    newNode.next = curr.next
+    curr.next = newNode
   }
 
   deleteByNode (node) {
@@ -102,24 +102,24 @@ class LinkedList {
       return
     }
 
-    let currentNode = this.head
-    while (currentNode !== null && currentNode.next !== node) {
-      currentNode = currentNode.next
+    let curr = this.head
+    while (curr !== null && curr.next !== node) {
+      curr = curr.next
     }
 
-    if (currentNode === null) {
+    if (curr === null) {
       // 没找着
       return -1
     }
 
-    currentNode.next = currentNode.next.next
+    curr.next = curr.next.next
   }
 
   *[Symbol.iterator] () {
-    let currentNode = this.head
-    while (currentNode !== null) {
-      yield currentNode
-      currentNode = currentNode.next
+    let curr = this.head
+    while (curr !== null) {
+      yield curr
+      curr = curr.next
     }
   }
 
