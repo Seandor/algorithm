@@ -123,7 +123,7 @@ describe('LinkedList', function () {
       list.insertTail(1)
 
       const firstNode = list.findByIndex(0)
-      
+
       list.insertBefore(firstNode, 2)
 
       expect(list.findByIndex(0).value).toBe(2)
@@ -152,7 +152,7 @@ describe('LinkedList', function () {
     })
   })
 
-  it ('should delete head node', function () {
+  it('should delete head node', function () {
     const list = new LinkedList()
     list.insertTail(1)
 
@@ -163,7 +163,7 @@ describe('LinkedList', function () {
     expect(list.findByIndex(0)).toBe(-1)
   })
 
-  it ('should delete tail node', function () {
+  it('should delete tail node', function () {
     const list = new LinkedList()
     list.insertTail(1)
     list.insertTail(2)

@@ -115,14 +115,13 @@ class LinkedList {
     curr.next = curr.next.next
   }
 
-  *[Symbol.iterator] () {
+  * [Symbol.iterator] () {
     let curr = this.head
     while (curr !== null) {
       yield curr
       curr = curr.next
     }
   }
-
 }
 
 module.exports = {

@@ -97,7 +97,7 @@ class LinkedList {
     curr.next = curr.next.next
   }
 
-  *[Symbol.iterator]() {
+  * [Symbol.iterator] () {
     let curr = this.head.next
     while (curr !== null) {
       yield curr

@@ -23,11 +23,16 @@
   },
   "homepage": "https://github.com/Seandor/algorithm#readme",
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.19.0",
     "expect": "^26.6.2",
     "mocha": "^8.2.1",
     "standard": "^16.0.3"
   },
   "mocha": {
     "spec": "**/*.test.js"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }
