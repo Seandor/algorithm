@@ -18,6 +18,7 @@ class BinarySearchTree {
     }
     return this.isValidBST_v0(root.left) && this.isValidBST_v0(root.right)
   }
+
   /*
    * 对于某一个节点root，他只能管得了自己的左右子节点，怎么把root的约束传递给左右子树呢？
    * 我们通过使用辅助函数，增加函数参数列表，在参数中携带额外信息，将这种约束传递给子树的所有节点。
@@ -33,8 +34,8 @@ class BinarySearchTree {
       if (max !== null && root.val >= max.val) {
         return false
       }
-      return this._isValidBST(root.left, min, root)
-        && this._isValidBST(root.right, root, max)
+      return this._isValidBST(root.left, min, root) &&
+        this._isValidBST(root.right, root, max)
     }
     return _isValidBST(root, null, null)
   }

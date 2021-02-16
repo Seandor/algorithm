@@ -9,7 +9,6 @@ let expected2
 let expected3
 
 describe('SortAlgo', () => {
-
   beforeEach(() => {
     data1 = [2, 3, 1, 0, 9, 5, 4]
     expected1 = [0, 1, 2, 3, 4, 5, 9]
@@ -29,8 +28,8 @@ describe('SortAlgo', () => {
       expect(data2).toEqual(expected2)
       SortAlgo.bubbleSort(data3)
       expect(data3).toEqual(expected3)
-    });
-  });
+    })
+  })
 
   describe('insertionSort', () => {
     it('should sort', () => {
@@ -40,8 +39,8 @@ describe('SortAlgo', () => {
       expect(data2).toEqual(expected2)
       SortAlgo.insertionSort(data3)
       expect(data3).toEqual(expected3)
-    });
-  });
+    })
+  })
 
   describe('selectionSort', () => {
     it('should sort', () => {
@@ -51,7 +50,28 @@ describe('SortAlgo', () => {
       expect(data2).toEqual(expected2)
       SortAlgo.selectionSort(data3)
       expect(data3).toEqual(expected3)
-    });
-  });
-  
-});
+    })
+  })
+
+  describe('mergeSort', () => {
+    it('should sort', () => {
+      SortAlgo.mergeSort(data1)
+      expect(data1).toEqual(expected1)
+      SortAlgo.mergeSort(data2)
+      expect(data2).toEqual(expected2)
+      SortAlgo.mergeSort(data3)
+      expect(data3).toEqual(expected3)
+    })
+  })
+
+  describe('quickSort', () => {
+    it('should sort', () => {
+      SortAlgo.quickSort(data1)
+      expect(data1).toEqual(expected1)
+      SortAlgo.quickSort(data2)
+      expect(data2).toEqual(expected2)
+      SortAlgo.quickSort(data3)
+      expect(data3).toEqual(expected3)
+    })
+  })
+})
