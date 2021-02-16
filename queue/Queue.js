@@ -33,3 +33,7 @@ class Queue {
     this.items = []
   }
 }
+
+module.exports = {
+  Queue
+}

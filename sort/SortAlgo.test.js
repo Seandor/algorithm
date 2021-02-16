@@ -1,4 +1,4 @@
-const { it, describe } = require('mocha')
+const { it, describe, beforeEach } = require('mocha')
 const { SortAlgo } = require('./SortAlgo')
 const expect = require('expect')
 let data1
@@ -64,6 +64,17 @@ describe('SortAlgo', () => {
     })
   })
 
+  describe('mergeSortEx', () => {
+    it('should sort', () => {
+      SortAlgo.mergeSortEx(data1)
+      expect(data1).toEqual(expected1)
+      SortAlgo.mergeSortEx(data2)
+      expect(data2).toEqual(expected2)
+      SortAlgo.mergeSortEx(data3)
+      expect(data3).toEqual(expected3)
+    })
+  })
+
   describe('quickSort', () => {
     it('should sort', () => {
       SortAlgo.quickSort(data1)
@@ -71,6 +82,17 @@ describe('SortAlgo', () => {
       SortAlgo.quickSort(data2)
       expect(data2).toEqual(expected2)
       SortAlgo.quickSort(data3)
+      expect(data3).toEqual(expected3)
+    })
+  })
+
+  describe('quickSortEx', () => {
+    it('should sort', () => {
+      SortAlgo.quickSortEx(data1)
+      expect(data1).toEqual(expected1)
+      SortAlgo.quickSortEx(data2)
+      expect(data2).toEqual(expected2)
+      SortAlgo.quickSortEx(data3)
       expect(data3).toEqual(expected3)
     })
   })

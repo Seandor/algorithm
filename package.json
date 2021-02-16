@@ -4,10 +4,10 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "standard && npm run mocha",
+    "test": "npm run lint && npm run coverage",
     "mocha": "mocha --timeout 8000",
     "coverage": "nyc --reporter=lcov --reporter=text-summary npm run mocha",
-    "fix": "standard --fix"
+    "lint": "eslint **/*.js"
   },
   "repository": {
     "type": "git",
@@ -24,15 +24,11 @@
   "homepage": "https://github.com/Seandor/algorithm#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.19.0",
+    "eslint": "^7.20.0",
     "expect": "^26.6.2",
-    "mocha": "^8.2.1",
-    "standard": "^16.0.3"
+    "mocha": "^8.2.1"
   },
   "mocha": {
     "spec": "**/*.test.js"
-  },
-  "standard": {
-    "parser": "babel-eslint"
   }
 }

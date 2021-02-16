@@ -27,3 +27,13 @@ https://sourceforge.net/projects/mingw-w64/files/
 `npm test`
 
 nyc 这个包有问题，和当前的 mocha 有冲突，不能安装在当前项目，安装在全局则没问题。
+
+## Lint
+
+放弃 `standard`，改用 `eslint`。 `standard` 这个东西不用配置自然就失去了灵活性。鱼与熊掌不可兼得。我选择可以灵活配置的 `eslint`。
+
+需要注意的是为了支持新的 JS 语言，需要在 `eslint` 配置文件中使用 `babel-eslint` 作为 parser。
+
+```JSON
+"parser": "babel-eslint",
+```
