@@ -18,7 +18,7 @@ class Queue {
 
   // 返回队首元素
   front () {
-    return this.items[this.items.length - 1]
+    return this.items[0]
   }
 
   size () {
