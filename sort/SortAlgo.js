@@ -47,6 +47,34 @@ class SortAlgo {
     }
   }
 
+  static shellSort (nums) {
+    const len = nums.length
+    if (len <= 1) {
+      return
+    }
+    let gap = Math.floor(len / 2)
+
+    while (gap >= 1) {
+      for (let i = gap; i < len; i++) {
+        const value = nums[i]
+        let j = i - gap
+        while (j >= 0) {
+          // 搬移数据
+          if (nums[j] > value) {
+            nums[j + gap] = nums[j]
+          } else {
+            break
+          }
+          j -= gap
+        }
+
+        // 插入数据
+        nums[j + gap] = value
+      }
+      gap = Math.floor(gap/2)
+    }
+  }
+
   static selectionSort (nums) {
     const len = nums.length
     if (len <= 1) {

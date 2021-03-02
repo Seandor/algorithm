@@ -42,6 +42,17 @@ describe('SortAlgo', () => {
     })
   })
 
+  describe('shellSort', () => {
+    it('should sort', () => {
+      SortAlgo.shellSort(data1)
+      expect(data1).toEqual(expected1)
+      SortAlgo.shellSort(data2)
+      expect(data2).toEqual(expected2)
+      SortAlgo.shellSort(data3)
+      expect(data3).toEqual(expected3)
+    })
+  })
+
   describe('selectionSort', () => {
     it('should sort', () => {
       SortAlgo.selectionSort(data1)
