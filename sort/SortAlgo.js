@@ -2,6 +2,12 @@ class SortAlgo {
   constructor () {
   }
 
+  static swap (nums, i, j) {
+    const temp = nums[i]
+    nums[i] = nums[j]
+    nums[j] = temp
+  }
+
   static bubbleSort (nums) {
     const len = nums.length
     if (len <= 1) {
@@ -194,22 +200,19 @@ class SortAlgo {
     let i = start
     let j = start
 
+    // 类似选择排序的思路，遇到比 pivot 小的就和 i 交换，
+    // 保证 i 之前的数都比 pivot 小
     while (j < end) {
       if (nums[j] < pivot) {
-        if (i === j) {
-          i++
-        } else {
-          const temp = nums[i]
-          nums[i++] = nums[j]
-          nums[j] = temp
+        if (i !== j) {
+          SortAlgo.swap(nums, i, j)
         }
+        i++
       }
       j++
     }
 
-    const temp = nums[i]
-    nums[i] = nums[j]
-    nums[j] = temp
+    SortAlgo.swap(nums, i, j)
 
     return i
   }
