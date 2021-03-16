@@ -18,9 +18,7 @@ class SortAlgo {
       let isDataExchange = false
       for (let j = 0; j < len - i - 1; j++) {
         if (nums[j] > nums[j + 1]) {
-          const temp = nums[j]
-          nums[j] = nums[j + 1]
-          nums[j + 1] = temp
+          SortAlgo.swap(nums, j, j + 1)
           isDataExchange = true
         }
       }
