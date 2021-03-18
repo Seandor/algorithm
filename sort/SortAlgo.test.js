@@ -107,4 +107,15 @@ describe('SortAlgo', () => {
       expect(data3).toEqual(expected3)
     })
   })
+
+  describe('quickSortRandom', () => {
+    it('should sort', () => {
+      SortAlgo.quickSortRandom(data1)
+      expect(data1).toEqual(expected1)
+      SortAlgo.quickSortEx(data2)
+      expect(data2).toEqual(expected2)
+      SortAlgo.quickSortEx(data3)
+      expect(data3).toEqual(expected3)
+    })
+  })
 })

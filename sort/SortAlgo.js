@@ -215,6 +215,27 @@ class SortAlgo {
     return i
   }
 
+  static partitionRandom (nums, start, end) {
+    const pivot = Math.floor(start + (end - start + 1) * Math.random())
+    SortAlgo.swap(nums, pivot, end)
+
+    let i = start
+    let j = start
+    while (j < end) {
+      if (nums[j] < nums[end]) {
+        if (i !== j) {
+          SortAlgo.swap(nums, i, j)
+        }
+        i++
+      }
+      j++
+    }
+
+    // 此时 j 就等于 end 等于 pivot，而 i 之前的元素都小于 pivot
+    SortAlgo.swap(nums, i, j)
+    return i
+  }
+
   // 自己写的效率较低但是思路简单的分区函数
   static partitionSimple (nums, start, end) {
     const pivot = nums[end]
@@ -250,7 +271,7 @@ class SortAlgo {
       const middle = SortAlgo.partitionSimple(nums, start, end)
       quickSortInternal(nums, start, middle - 1)
       quickSortInternal(nums, middle + 1, end)
-    }    
+    }
 
     const len = nums.length
     quickSortInternal(nums, 0, len - 1)
@@ -265,7 +286,22 @@ class SortAlgo {
       const middle = SortAlgo.partition(nums, start, end)
       quickSortInternal(nums, start, middle - 1)
       quickSortInternal(nums, middle + 1, end)
-    }    
+    }
+
+    const len = nums.length
+    quickSortInternal(nums, 0, len - 1)
+  }
+
+  static quickSortRandom (nums) {
+    function quickSortInternal (nums, start, end) {
+      if (start >= end) {
+        return
+      }
+
+      const middle = SortAlgo.partitionRandom(nums, start, end)
+      quickSortInternal(nums, start, middle - 1)
+      quickSortInternal(nums, middle + 1, end)
+    }
 
     const len = nums.length
     quickSortInternal(nums, 0, len - 1)
