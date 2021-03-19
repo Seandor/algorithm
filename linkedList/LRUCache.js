@@ -12,7 +12,7 @@ class LRUCache {
     this.capacity = capacity
   }
 
-  /** 
+  /**
    * @param {number} key
    * @return {number}
    */
@@ -25,8 +25,8 @@ class LRUCache {
     return this.map.get(key).data.val
   }
 
-  /** 
-   * @param {number} key 
+  /**
+   * @param {number} key
    * @param {number} value
    * @return {void}
    */

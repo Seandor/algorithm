@@ -4,7 +4,7 @@ class HashTable {
   constructor () {
     this.table = []
     this.use = 0
-    // 限制数组长度 
+    // 限制数组长度
     this.capacity = 7
   }
 
