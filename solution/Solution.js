@@ -25,7 +25,7 @@ class Solution {
     }
 
     colors[cell.key] = 1
-    const references = Solution.getCellReferences(cell.value)
+    const references = Solution.getCellReferences(cell.value) || []
     for (const ref of references) {
       if (colors[ref] === 2) {
         continue
@@ -40,13 +40,8 @@ class Solution {
   }
 
   static getCellReferences (str) {
-    const REGEX = /([A-Z]{2}[0-9]{2})/g
-    const result = []
-    let matches
-    while ((matches = REGEX.exec(str)) !== null) {
-      result.push(matches[1])
-    }
-    return result
+    const REGEX = /[A-Z]{2}[0-9]{2}/g
+    return str.match(REGEX)
   }
 }
 
