@@ -1,5 +1,5 @@
-const { describe, it } = require('mocha')
-const expect = require('expect')
+import { it, describe } from 'mocha'
+import expect from 'expect'
 
 describe('Regular Expression examples', () => {
   describe('meta character', () => {

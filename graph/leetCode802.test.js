@@ -1,6 +1,7 @@
-const { describe, it } = require('mocha')
-const expect = require('expect')
-const { eventualSafeNodes } = require('./leetCode802')
+import { it, describe } from 'mocha'
+import expect from 'expect'
+
+import { eventualSafeNodes } from './leetCode802.js'
 
 describe('leetCode802', () => {
   it('should return eventual safe node', () => {

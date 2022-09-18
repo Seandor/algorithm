@@ -3,14 +3,14 @@
  * 2）链表中存储的是int类型的数据；
  */
 
-class ListNode {
+export class ListNode {
   constructor (value) {
     this.value = value
     this.next = null
   }
 }
 
-class LinkedList {
+export class LinkedList {
   constructor () {
     // 哨兵节点，带头链表。头节点不存储数据，始终指向链表第一个节点
     this.head = new ListNode('head')
@@ -104,9 +104,4 @@ class LinkedList {
       curr = curr.next
     }
   }
-}
-
-module.exports = {
-  LinkedList,
-  ListNode
 }

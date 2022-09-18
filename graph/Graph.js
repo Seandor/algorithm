@@ -1,4 +1,4 @@
-const { Queue } = require('../queue/Queue')
+import Queue from '../queue/Queue.js'
 
 /*
  * 无向图，邻接表实现
@@ -72,9 +72,6 @@ class Graph {
       }
     }
   }
-
 }
 
-module.exports = {
-  Graph
-}
+export default Graph

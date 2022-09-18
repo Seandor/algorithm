@@ -1,4 +1,4 @@
-function throttle (fn, interval = 200) {
+export const throttle = (fn, interval = 200) => {
   let flag = false
   return function (...args) {
     if (!flag) {
@@ -9,8 +9,4 @@ function throttle (fn, interval = 200) {
       }, interval)
     }
   }
-}
-
-module.exports = {
-  throttle
 }

@@ -1,4 +1,4 @@
-function debounce (fn, delay = 200) {
+export const debounce = (fn, delay = 200) => {
   let timer = null
   return function (...args) {
     if (timer) {
@@ -8,8 +8,4 @@ function debounce (fn, delay = 200) {
       fn.call(this, ...args)
     }, delay)
   }
-}
-
-module.exports = {
-  debounce
 }

@@ -1,6 +1,8 @@
-const { it, describe, beforeEach } = require('mocha')
-const { SortAlgo } = require('./SortAlgo')
-const expect = require('expect')
+import { it, describe, beforeEach } from 'mocha'
+import expect from 'expect'
+
+import SortAlgo from './SortAlgo.js'
+
 let data1
 let data2
 let data3

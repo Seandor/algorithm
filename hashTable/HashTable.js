@@ -1,4 +1,4 @@
-class HashTable {
+export default class HashTable {
   static LOAD_FACTOR = 0.75
 
   constructor () {
@@ -121,8 +121,4 @@ class HashTable {
     }
   }
 
-}
-
-module.exports = {
-  HashTable
 }

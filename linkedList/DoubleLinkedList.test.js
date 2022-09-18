@@ -1,6 +1,7 @@
-const { it, describe } = require('mocha')
-const expect = require('expect')
-const { DoubleListNode, DoubleLinkedList } = require('./DoubleLinkedList')
+import { it, describe } from 'mocha'
+import expect from 'expect'
+
+import { DoubleListNode, DoubleLinkedList } from './DoubleLinkedList.js'
 
 describe('DoubleLinkedList', () => {
   describe('insertTail', () => {

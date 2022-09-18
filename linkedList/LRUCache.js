@@ -1,4 +1,5 @@
-const { DoubleLinkedList, DoubleListNode } = require('./DoubleLinkedList')
+import { DoubleListNode, DoubleLinkedList } from './DoubleLinkedList.js'
+
 class LRUCache {
   /**
    * @param {number} capacity

@@ -1,10 +1,11 @@
+import Queue from '../queue/Queue.js'
 
 /**
  * 1）二叉树的创建，遍历，常见算法
  * 2）二叉树节点中存储的是int类型的数据；
  */
 
-class TreeNode {
+export const TreeNode = class {
   constructor (val, left, right) {
     this.val = (val === undefined ? 0 : val)
     this.left = (left === undefined ? null : left)
@@ -12,7 +13,7 @@ class TreeNode {
   }
 }
 
-class BinaryTree {
+export const BinaryTree = class {
   constructor () {
     this.root = null
   }
@@ -59,9 +60,39 @@ class BinaryTree {
     }
     return 1 + Math.max(this.maxDepth(root.left), this.maxDepth(root.right))
   }
-}
 
-module.exports = {
-  TreeNode,
-  BinaryTree
+  /**
+   * @param {TreeNode} root
+   * @return {number[][]}
+   */
+  static levelOrderTraverse (root) {
+    const allLevels = []
+    if (root === null) {
+      return allLevels
+    }
+
+    const queue = new Queue()
+    queue.enqueue(root)
+
+    while (!queue.isEmpty()) {
+      const currentLevelNodeCount = queue.size()
+      let currentLevel = []
+      for (let i = 0; i < currentLevelNodeCount; i++) {
+        const node = queue.dequeue()
+        currentLevel.push(node.val)
+
+        if (node.left) {
+          queue.enqueue(node.left)
+        }
+
+        if (node.right) {
+          queue.enqueue(node.right)
+        }
+      }
+      allLevels.push(currentLevel)
+    }
+
+    return allLevels
+  }
+
 }

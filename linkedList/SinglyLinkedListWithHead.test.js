@@ -1,6 +1,7 @@
-const { it, describe } = require('mocha')
-const { ListNode, LinkedList } = require('./SinglyLinkedListWithHead')
-const expect = require('expect')
+import { it, describe } from 'mocha'
+import expect from 'expect'
+
+import { ListNode, LinkedList } from './SinglyLinkedListWithHead.js'
 
 describe('LinkedListWithHead', function () {
   describe('findByValue', function () {

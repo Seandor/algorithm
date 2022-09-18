@@ -49,6 +49,4 @@ function isSafeNode (graph, color, node) {
   return true
 }
 
-module.exports = {
-  eventualSafeNodes
-}
+export { eventualSafeNodes }

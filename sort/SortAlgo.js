@@ -1,4 +1,4 @@
-class SortAlgo {
+export default class SortAlgo {
   constructor () {
   }
 
@@ -306,8 +306,4 @@ class SortAlgo {
     const len = nums.length
     quickSortInternal(nums, 0, len - 1)
   }
-}
-
-module.exports = {
-  SortAlgo
 }

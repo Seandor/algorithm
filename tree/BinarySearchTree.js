@@ -1,6 +1,6 @@
-const { TreeNode } = require('./BinaryTree')
+import { TreeNode } from './BinaryTree.js'
 
-class BinarySearchTree {
+export default class BinarySearchTree {
   constructor () {
     this.root = null
   }
@@ -88,8 +88,4 @@ class BinarySearchTree {
     }
     return null
   }
-}
-
-module.exports = {
-  BinarySearchTree
 }

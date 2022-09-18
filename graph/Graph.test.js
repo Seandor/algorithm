@@ -1,6 +1,7 @@
-const { it, describe } = require('mocha')
-const expect = require('expect')
-const { Graph } = require('./Graph')
+import { it, describe } from 'mocha'
+import expect from 'expect'
+
+import Graph from './Graph.js'
 
 describe('Graph', () => {
   describe('bfs', () => {

@@ -1,6 +1,7 @@
-const { it, describe } = require('mocha')
-const expect = require('expect')
-const { HashTable } = require('./HashTable')
+import { it, describe } from 'mocha'
+import expect from 'expect'
+
+import HashTable from './HashTable.js'
 
 describe('HashTable', () => {
   describe('put', () => {

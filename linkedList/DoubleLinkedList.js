@@ -1,4 +1,4 @@
-class DoubleListNode {
+export class DoubleListNode {
   constructor (data) {
     this.data = data
     this.prev = null
@@ -6,7 +6,7 @@ class DoubleListNode {
   }
 }
 
-class DoubleLinkedList {
+export class DoubleLinkedList {
   constructor () {
     this.head = new DoubleListNode(0)
     this.tail = new DoubleListNode(0)
@@ -41,9 +41,4 @@ class DoubleLinkedList {
   size () {
     return this.length
   }
-}
-
-module.exports = {
-  DoubleListNode,
-  DoubleLinkedList
 }
